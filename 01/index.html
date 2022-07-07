@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Partytown - XKE</title>
+  <link type="text/css" rel="stylesheet" href="../style.css" />
+  <script type="application/javascript" src="../js/script.js"></script>
+  <script type="application/javascript" src="../js/calculate.js"></script>
+</head>
+
+<body>
+  <h1>[01] JS main thread</h1>
+  <h3>Seconds: <span id="time">0</span></h3>
+  <button id="button">Long calc</button>
+  <h6 id="result"/>
+</body>
+<script>
+  document.getElementById('button').addEventListener('click', () => {
+    console.log('clicked!');
+    calculate();
+  });
+</script>
+
+</html>

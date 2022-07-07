@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Partytown - XKE</title>
+  <link type="text/css" rel="stylesheet" href="../style.css" />
+  <script type="application/javascript" src="../js/script.js"></script>
+  </script>
+</head>
+
+<body>
+  <h1>[02] Web Worker</h1>
+  <h3>Seconds: <span id="time">0</span></h3>
+  <button id="button">Long calc</button>
+  <h6 id="result"/>
+</body>
+<script>
+  document.getElementById('button').addEventListener('click', () => {
+    console.log('clicked!');
+    const worker = new Worker("./my-worker.js");
+    worker.postMessage('calculate'); // calculate
+    worker.onmessage = event => {
+      if (document.getElementById('result') !== undefined) {
+        document.getElementById('result').innerHTML = event.data.toLocaleString();
+      }
+      worker.terminate();
+    }
+  });
+</script>
+
+</html>

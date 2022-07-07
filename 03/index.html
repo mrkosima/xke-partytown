@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Partytown - XKE</title>
+  <link type="text/css" rel="stylesheet" href="../style.css" />
+  <script type="application/javascript" src="../js/script.js"></script>
+  <script>
+    partytown = {
+      debug: true,
+      forward: ["calculate"]
+    };
+  </script>
+  <script type="application/javascript" src="../~partytown/partytown.js"></script>
+  <script type="text/partytown" src="../js/calculate.js"></script>
+</head>
+
+<body>
+  <h1>[03] Partytown 🎉</h1>
+  <h3>Seconds: <span id="time">0</span></h3>
+  <button id="button">Long calc</button>
+  <h6 id="result" />
+</body>
+<script>
+  document.getElementById('button').addEventListener('click', () => {
+    console.log('clicked!');
+    calculate();
+  });
+</script>
+
+</html>
